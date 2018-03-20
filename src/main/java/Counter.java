@@ -13,9 +13,12 @@ public class Counter extends HttpServlet {
         if (parameter == null || parameter.isEmpty()) {
             counter += 1;
             response.getWriter().println("<h1>The count is " + counter + ".</h1>");
-        } else {
+        } else if (parameter.equalsIgnoreCase("true")) {
             response.getWriter().println("<h1>The count has now been reset!</h1>");
             counter = 0;
+        } else {
+            counter += 1;
+            response.getWriter().println("<h1>The count is " + counter + ".</h1>");
         }
     }
 }
