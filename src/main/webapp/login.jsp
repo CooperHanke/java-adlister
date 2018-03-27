@@ -16,6 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="css/profile.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <style>
@@ -69,13 +70,6 @@
     </style>
 </head>
 <body>
-<%--<% request.getParameter("username");--%>
-    <%--String password = request.getParameter("password");--%>
-
-    <%--if (username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("password")) {--%>
-        <%--response.sendRedirect("index.jsp");--%>
-    <%--}--%>
-<%--%>--%>
     <div class = "container">
     <div class="wrapper">
         <form action="#" method="post" name="Login_Form" class="form-signin">
