@@ -15,7 +15,7 @@ public class NameServlet extends HttpServlet {
             request.getRequestDispatcher("/name.jsp").forward(request, response);
         } else {
             request.setAttribute("name", request.getParameter("name"));
-            request.setAttribute("title", "Hello" + request.getAttribute("name"));
+            request.setAttribute("title", "Hello " + request.getAttribute("name"));
             request.getRequestDispatcher("/surprise.jsp").forward(request, response);
         }
     }

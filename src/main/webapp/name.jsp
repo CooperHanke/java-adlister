@@ -20,7 +20,7 @@
     <jsp:include page="partials/navbar.jsp" />
     <div class="container">
         <h1>Please Log In</h1>
-        <form action="#" method="POST">
+        <form action="name" method="POST">
             <div class="form-group">
                 <label for="name">Enter your name:</label>
                 <input id="name" name="name" class="form-control" type="text">
