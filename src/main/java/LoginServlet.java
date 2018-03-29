@@ -19,6 +19,7 @@ public class LoginServlet extends HttpServlet {
                 username.equals("cooper") && password.equals("password");
         if (validAttempt) {
             HttpSession session = request.getSession();
+            session.setAttribute("currentTimeLoggedIn", session.getCreationTime());
             session.setAttribute("user",username.substring(0,1).toUpperCase() +
             username.substring(1));
             response.sendRedirect("/profile");
