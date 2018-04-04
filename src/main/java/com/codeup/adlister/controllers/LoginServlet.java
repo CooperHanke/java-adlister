@@ -38,10 +38,10 @@ public class LoginServlet extends HttpServlet {
                     validAttempt = true;
                 }
             } else {
-                System.out.println("Did not find them");
+                System.out.println("Did not find the user.");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Something happened when trying to access the database!!\n" + e.getMessage());
         }
         // TODO: check the submitted password against what you have in your database
 

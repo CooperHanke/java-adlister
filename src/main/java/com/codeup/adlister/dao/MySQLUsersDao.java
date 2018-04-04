@@ -46,6 +46,22 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-        return null;
+        try {
+            PreparedStatement stmt = connection.prepareStatement(createInsertQuery(user), Statement.RETURN_GENERATED_KEYS);
+            System.out.println(stmt);
+            stmt.setString(1, user.getUsername());
+            stmt.setString(2, user.getEmail());
+            stmt.setString(3, user.getPassword());
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error registering the user.", e);
+        }
+    }
+
+    private String createInsertQuery(User user) {
+        return "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
     }
 }
