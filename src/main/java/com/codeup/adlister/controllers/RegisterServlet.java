@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         // TODO: show the registration form
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
