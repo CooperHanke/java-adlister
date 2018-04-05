@@ -47,11 +47,12 @@ public class MySQLUsersDao implements Users {
     @Override
     public Long insert(User user) {
         try {
-            PreparedStatement stmt = connection.prepareStatement(createInsertQuery(user), Statement.RETURN_GENERATED_KEYS);
-            System.out.println(stmt);
+            String sql = "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
+            PreparedStatement stmt = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, user.getUsername());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
+            System.out.println(stmt);
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
             rs.next();
@@ -59,9 +60,5 @@ public class MySQLUsersDao implements Users {
         } catch (SQLException e) {
             throw new RuntimeException("Error registering the user.", e);
         }
-    }
-
-    private String createInsertQuery(User user) {
-        return "INSERT INTO users(username, email, password) VALUES (?, ?, ?)";
     }
 }

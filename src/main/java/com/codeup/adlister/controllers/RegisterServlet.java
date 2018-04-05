@@ -39,7 +39,7 @@ public class RegisterServlet extends HttpServlet {
                     System.out.println(user.getUsername());
                     System.out.println(user.getPassword());
                     System.out.println(user.getEmail());
-                    DaoFactory.getUsersDao().insert(user); // never hits this
+                    DaoFactory.getUsersDao().insert(user);
                     request.getSession().setAttribute("user", user);
                     response.sendRedirect("/profile");
                 }
